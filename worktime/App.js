@@ -1,157 +1,120 @@
 import React, {useState} from 'react';
-
 import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import {CheckBox, View, Text, Image, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import {RegistrationPage} from './components/RegistrationPage.js';
-import {styles} from './styles/style.js';
+import BannerPage from './components/Banner';
+import RegistrationPage from './components/RegistrationPage';
+import EnterPage from './components/EnterPage';
+import {styles} from './styles/style';
 // import CheckBox from '@react-native-community/checkbox';
 
 export default function App() {
   const [isSelected, setSelection] = useState(false);
   
+  const Stack = createNativeStackNavigator();
+  const MyStack = () => {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Banner"
+            component={BannerPage}
+            options={{title: 'Welcome'}}
+          />
+          <Stack.Screen
+          name="Registration" 
+          component={RegistrationPage}
+          />
+          <Stack.Screen
+          name="Enter" 
+          component={EnterPage}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  };
+
+  
   return (
     <ScrollView>
       <View style={styles.container}> 
-      <View style={styles.header}>
-        {/* Лого */}
-        <Text style={styles.logo}>Logo</Text>
-        {/* Кнопки */}
-        <View style={styles.buttonsContainer}>
-        
-          <TouchableOpacity style={styles.button}>
-          <Image style={styles.image} source={require('./find.png')}
-            />
-            {/* <Text>Поиск</Text> */}           
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-          <Image style={styles.image} source={require('./people.png')}
-            />
-            {/* <Text>Сотрудники</Text> */}
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-          <Image style={styles.image} source={require('./cog.png')}
-            />
-            {/* <Text>Настройки</Text> */}
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.burger}>
-            <Text style={styles.burgerText}>☰</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    
-      {/* Компонент Регистрация */}
-      <View style={styles.createAccount}>
-        <Text style={styles.title}>СОЗДАНИЕ УЧЕТНОЙ ЗАПИСИ</Text>
-        <Text style={styles.account}>У Вас уже есть аккаунт?</Text>
-        <TouchableOpacity style={styles.accountButton}>
-              <Text style={styles.accountButtonText}>ВОЙТИ</Text>
-        </TouchableOpacity>
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.input} placeholder="Имя" />
-          <TextInput style={styles.input} placeholder="Фамилия" />
-          <TextInput style={styles.input} placeholder="Электронная почта" />
-          <TextInput style={styles.input} placeholder="Логин" />
-          <TextInput style={styles.input} placeholder="Пароль" secureTextEntry={true} />         
-          <View style={styles.checkboxRow}>
-            <View style={styles.checkboxContainer}>
-              {/* <CheckBox
-                value={isSelected}
-                onValueChange={setSelection}
-                style={styles.checkbox}
-              /> */}
-              <Text style={styles.label}>Сотрудник</Text>
-            </View>
-            <View style={styles.checkboxContainer}>
-              {/* <CheckBox
-                value={isSelected}
-                onValueChange={setSelection}
-                style={styles.checkbox}
-              /> */}
-              <Text style={styles.label}>Руководитель</Text>
-            </View>
-          </View>
-          <TouchableOpacity style={styles.accountCreateButton}>
-            <Text style={styles.accountCreateButtonText}>Создать аккаунт</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.accountButton}>
-            <Text style={styles.accountSMS}>Создать аккаунт по СМС</Text>
-          </TouchableOpacity>
+        <View style={styles.header}>
+          {/* Лого */}
+          <Text style={styles.logo}>Logo</Text>
+          {/* Кнопки */}
+          <View style={styles.buttonsContainer}>
           
+            <TouchableOpacity style={styles.button}>
+            <Image style={styles.image} source={require('./find.png')}
+              />
+              {/* <Text>Поиск</Text> */}           
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+            <Image style={styles.image} source={require('./people.png')}
+              />
+              {/* <Text>Сотрудники</Text> */}
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+            <Image style={styles.image} source={require('./cog.png')}
+              />
+              {/* <Text>Настройки</Text> */}
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.burger}>
+              <Text style={styles.burgerText}>☰</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-
-      {/* Компонент Вход */}
-      <View style={styles.enter}>
-        <Text style={styles.title}>ВХОД</Text>
-        <Text style={styles.account}>У Вас еще нет аккаунта?</Text>
-        <TouchableOpacity style={styles.accountButton}>
-              <Text style={styles.accountButtonText}>ЗАРЕГИСТРИРОВАТЬСЯ</Text>
-        </TouchableOpacity>
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.input} placeholder="Логин" />
-          <TextInput style={styles.input} placeholder="Пароль" secureTextEntry={true} />
-          <TouchableOpacity style={styles.accountButton}>
-            <Text style={styles.accountPassword}>Забыл пароль?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.accountCreateButton}>
-            <Text style={styles.accountCreateButtonText}>ВОЙТИ</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.accountButton}>
-            <Text style={styles.accountSMS}>Войти по СМС</Text>
-          </TouchableOpacity>         
-        </View>
-      </View>
-
-
-
-      {/* Подвал */}
-      <View style={styles.footer}>
-        <View style={styles.footerMenu}>
-            {/* Меню */}
-        <Text style={styles.logo}>Logo</Text>
-        {/* Кнопки */}
-        <View style={styles.buttonsContainer}>
         
-          <TouchableOpacity style={styles.button}>
-          <Image style={styles.image} source={require('./find.png')}
-            />
-            {/* <Text>Поиск</Text> */}           
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-          <Image style={styles.image} source={require('./people.png')}
-            />
-            {/* <Text>Сотрудники</Text> */}
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-          <Image style={styles.image} source={require('./cog.png')}
-            />
-            {/* <Text>Настройки</Text> */}
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.burger}>
-            <Text style={styles.burgerText}>☰</Text>
-          </TouchableOpacity>
-        </View>
-        </View>    
-          <View style={styles.footerSupport}>
-            <Text style={styles.footerSupportTitle}>Поддержка:</Text>
-            <View>
-              <View style={styles.footerSupportList}>
-                <Text style={styles.footerSupportItem}>Помощь по программе</Text>           
-                <TouchableOpacity style={styles.burger}>
-                  <Text style={styles.footerSupportItem}>+7(777)777-77-77</Text>
-                </TouchableOpacity>               
-              </View>
-              <View  style={styles.footerSupportList}>
-                <Text style={styles.footerSupportItem}>FAQ</Text>
-                <TouchableOpacity style={styles.burger}>
-                  <Text style={styles.footerSupportItem}>xakaton.2024@gmail.ru</Text>
-                </TouchableOpacity>               
+          <MyStack />
+        
+        <View style={styles.footer}>
+          <View style={styles.footerMenu}>
+              {/* Меню */}
+          <Text style={styles.logo}>Logo</Text>
+          {/* Кнопки */}
+          <View style={styles.buttonsContainer}>
+          
+            <TouchableOpacity style={styles.button}>
+            <Image style={styles.image} source={require('./find.png')}
+              />
+              {/* <Text>Поиск</Text> */}           
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+            <Image style={styles.image} source={require('./people.png')}
+              />
+              {/* <Text>Сотрудники</Text> */}
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+            <Image style={styles.image} source={require('./cog.png')}
+              />
+              {/* <Text>Настройки</Text> */}
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.burger}>
+              <Text style={styles.burgerText}>☰</Text>
+            </TouchableOpacity>
+          </View>
+          </View>    
+            <View style={styles.footerSupport}>
+              <Text style={styles.footerSupportTitle}>Поддержка:</Text>
+              <View>
+                <View style={styles.footerSupportList}>
+                  <Text style={styles.footerSupportItem}>Помощь по программе</Text>           
+                  <TouchableOpacity style={styles.burger}>
+                    <Text style={styles.footerSupportItem}>+7(777)777-77-77</Text>
+                  </TouchableOpacity>               
+                </View>
+                <View  style={styles.footerSupportList}>
+                  <Text style={styles.footerSupportItem}>FAQ</Text>
+                  <TouchableOpacity style={styles.burger}>
+                    <Text style={styles.footerSupportItem}>xakaton.2024@gmail.ru</Text>
+                  </TouchableOpacity>               
+                </View>
               </View>
             </View>
-          </View>
+        </View>
+      
       </View>
-    </View>
     </ScrollView>
     
   );

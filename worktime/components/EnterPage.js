@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import {styles} from './../styles/style.js';
+import {styles} from '../styles/style';
 
-const Enter = () => {
+const EnterPage = () => {
   return (
     <View style={styles.enter}>
         <Text style={styles.title}>ВХОД</Text>
@@ -28,4 +28,4 @@ const Enter = () => {
 };
 
 
-export default Enter;
+export default EnterPage;

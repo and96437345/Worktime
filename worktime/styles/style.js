@@ -4,6 +4,11 @@ export const styles = StyleSheet.create({
     image:{
       
     },
+    textBanner: {
+      fontSize: 36,
+      fontWeight: '600',
+      textAlign: 'center',
+    },
     container: {
       flex: 1,
       paddingHorizontal: 20,

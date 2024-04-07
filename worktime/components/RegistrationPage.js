@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, CheckBox, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import {styles} from './../styles/style.js';
+import {styles} from '../styles/style';
 
 const RegistrationPage = () => {
   return (
