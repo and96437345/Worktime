@@ -4,7 +4,9 @@ import {styles} from '../styles/style';
 
 const BannerPage = () => {
   return (
-    <Text style={styles.textBanner}>Учет рабочего времени</Text>
+    <View style={styles.container}>
+      <Text style={styles.textBanner}>Учет рабочего времени</Text>
+    </View>
   );
 };
 

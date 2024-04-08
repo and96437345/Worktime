@@ -27,11 +27,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Registration" component={RegistrationPage} />
-          <Stack.Screen
-            name="Banner"
-            component={BannerPage}
-            options={{ title: "Welcome" }}
-          />
+          {/* <Stack.Screen name="Banner" component={BannerPage} /> */}
           <Stack.Screen name="Enter" component={EnterPage} />
         </Stack.Navigator>
       </NavigationContainer>

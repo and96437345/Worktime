@@ -35,6 +35,7 @@ const RegistrationPage = () => {
           </TouchableOpacity>
         </View>
       </View>
+      
       <View style={styles.createAccount}>
         <Text style={styles.title}>СОЗДАНИЕ УЧЕТНОЙ ЗАПИСИ</Text>
         <Text style={styles.account}>У Вас уже есть аккаунт?</Text>
