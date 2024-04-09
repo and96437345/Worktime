@@ -131,6 +131,6 @@ export const styles = StyleSheet.create({
   },
   enter: {
     marginTop: 50,
-    marginBottom: 150,
+    marginBottom: 66,
   },
 });

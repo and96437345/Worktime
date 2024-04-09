@@ -2,7 +2,10 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import {styles} from '../styles/style';
 
-const EnterPage = () => {
+const EnterPage = ({ navigation }) => {
+  const loadPage = () => {
+    navigation.navigate('Registration');
+  }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -31,7 +34,7 @@ const EnterPage = () => {
       <View style={styles.enter}>
           <Text style={styles.title}>ВХОД</Text>
           <Text style={styles.account}>У Вас еще нет аккаунта?</Text>
-          <TouchableOpacity style={styles.accountButton}>
+          <TouchableOpacity style={styles.accountButton} onPress={loadPage}>
                 <Text style={styles.accountButtonText}>ЗАРЕГИСТРИРОВАТЬСЯ</Text>
           </TouchableOpacity>
           <View style={styles.inputContainer}>
@@ -78,7 +81,7 @@ const EnterPage = () => {
             <View style={styles.footerSupportList}>
               <Text style={styles.footerSupportItem}>Помощь по программе</Text>
               <TouchableOpacity style={styles.burger}>
-                <Text style={styles.footerSupportItem}>+7(777)777-77-77</Text>
+                <Text style={styles.footerSupportItem}>+7 (777) 777-77-77</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.footerSupportList}>

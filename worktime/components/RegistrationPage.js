@@ -7,10 +7,16 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Button,
 } from "react-native";
 import { styles } from "../styles/style";
 
-const RegistrationPage = () => {
+const RegistrationPage = ({ navigation }) => {
+
+  const loadPage = () => {
+    navigation.navigate('Enter');
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -39,11 +45,9 @@ const RegistrationPage = () => {
       <View style={styles.createAccount}>
         <Text style={styles.title}>СОЗДАНИЕ УЧЕТНОЙ ЗАПИСИ</Text>
         <Text style={styles.account}>У Вас уже есть аккаунт?</Text>
-
-        <TouchableOpacity style={styles.accountButton}>
+        <TouchableOpacity style={styles.accountButton} onPress={loadPage} >
           <Text style={styles.accountButtonText}>ВОЙТИ</Text>
         </TouchableOpacity>
-
         <View style={styles.inputContainer}>
           <TextInput style={styles.input} placeholder="Имя" />
           <TextInput style={styles.input} placeholder="Фамилия" />
@@ -110,7 +114,7 @@ const RegistrationPage = () => {
             <View style={styles.footerSupportList}>
               <Text style={styles.footerSupportItem}>Помощь по программе</Text>
               <TouchableOpacity style={styles.burger}>
-                <Text style={styles.footerSupportItem}>+7(777)777-77-77</Text>
+                <Text style={styles.footerSupportItem}>+7 (777) 777-77-77</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.footerSupportList}>
