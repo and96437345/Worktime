@@ -41,7 +41,7 @@ const StartDayPage = ({ navigation }) => {
         <View style={styles.createAccount}>
         
             <TouchableOpacity style={styles.startButton}>
-              <Text style={styles.startButtonText}>'Начать рабочий день'</Text>
+              <Text style={styles.startButtonText}>Начать рабочий день</Text>
             </TouchableOpacity>
             
         </View>
