@@ -6,24 +6,31 @@ const EnterPage = ({ navigation }) => {
   const loadPage = () => {
     navigation.navigate('Registration');
   }
+  const loadStart = () => {
+    navigation.navigate('Start');
+  }
+  const loadList = () => {
+    navigation.navigate('List');
+  }
+
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.logo}>Logo</Text>
           <View style={styles.buttonsContainer}>
-            <TouchableOpacity style={styles.button}>
+            {/* <TouchableOpacity style={styles.button}>
               <Image style={styles.image} source={require("../find.png")} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+            </TouchableOpacity> */}
+            <TouchableOpacity style={styles.button} onPress={loadList}>
               <Image style={styles.image} source={require("../people.png")} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+            {/* <TouchableOpacity style={styles.button}>
               <Image style={styles.image} source={require("../cog.png")} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.burger}>
               <Text style={styles.burgerText}>☰</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
 
@@ -39,7 +46,7 @@ const EnterPage = ({ navigation }) => {
               <TouchableOpacity style={styles.accountButton}>
                 <Text style={styles.accountPassword}>Забыл пароль?</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.accountCreateButton}>
+              <TouchableOpacity style={styles.accountCreateButton}  onPress={loadStart}>
                 <Text style={styles.accountCreateButtonText}>ВОЙТИ</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.accountButton}>
@@ -48,7 +55,7 @@ const EnterPage = ({ navigation }) => {
             </View>
         </View>
 
-        <View style={styles.footer}>
+        {/* <View style={styles.footer}>
           <View style={styles.footerMenu}>
             <Text style={styles.logo}>Logo</Text>
             <View style={styles.buttonsContainer}>
@@ -85,7 +92,7 @@ const EnterPage = ({ navigation }) => {
               </View>
             </View>
           </View>
-        </View>
+        </View> */}
       </View>
     </ScrollView> 
   );

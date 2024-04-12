@@ -13,14 +13,8 @@ import {
 } from "react-native";
 import { styles } from "../styles/style";
 
-const RegistrationPage = ({ navigation }) => {
+const StartDayPage = ({ navigation }) => {
 
-  const loadPage = () => {
-    navigation.navigate('Enter');
-  }
-  const loadStart = () => {
-    navigation.navigate('Start');
-  }
   const loadList = () => {
     navigation.navigate('List');
   }
@@ -29,60 +23,46 @@ const RegistrationPage = ({ navigation }) => {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.header}>
+         
           <Text style={styles.logo}>Logo</Text>
+          
           <View style={styles.buttonsContainer}>
             {/* <TouchableOpacity style={styles.button}>
               <Image style={styles.image} source={require("../find.png")} />
+             
             </TouchableOpacity> */}
             <TouchableOpacity style={styles.button} onPress={loadList}>
-              <Image style={styles.image} source={require("../people.png")} />
+              <Image style={styles.image} source={require("../people.png")} />         
             </TouchableOpacity>
-            {/* <TouchableOpacity style={styles.button}>
-              <Image style={styles.image} source={require("../cog.png")} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.burger}>
-              <Text style={styles.burgerText}>☰</Text>
-            </TouchableOpacity> */}
+            
           </View>
         </View>
         
         <View style={styles.createAccount}>
-          <Text style={styles.title}>СОЗДАНИЕ УЧЕТНОЙ ЗАПИСИ</Text>
-          <Text style={styles.account}>У Вас уже есть аккаунт?</Text>
-          <TouchableOpacity style={styles.accountButton} onPress={loadPage} >
-            <Text style={styles.accountButtonText}>ВОЙТИ</Text>
-          </TouchableOpacity>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.input} placeholder="Имя" />
-            <TextInput style={styles.input} placeholder="Фамилия" />
-            <TextInput style={styles.input} placeholder="Электронная почта" />
-            <TextInput style={styles.input} placeholder="Логин" />
-            <TextInput
-              style={styles.input}
-              placeholder="Пароль"
-              secureTextEntry={true}
-            />
-            <TouchableOpacity style={styles.accountCreateButton} onPress={loadStart}>
-              <Text style={styles.accountCreateButtonText}>Создать аккаунт</Text>
+        
+            <TouchableOpacity style={styles.startButton}>
+              <Text style={styles.startButtonText}>'Начать рабочий день'</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.accountButton}>
-              <Text style={styles.accountSMS}>Создать аккаунт по СМС</Text>
-            </TouchableOpacity>
-          </View>
+            
         </View>
 
         {/* <View style={styles.footer}>
           <View style={styles.footerMenu}>
+            
             <Text style={styles.logo}>Logo</Text>
+            
             <View style={styles.buttonsContainer}>
               <TouchableOpacity style={styles.button}>
                 <Image style={styles.image} source={require("../find.png")} />
+                
               </TouchableOpacity>
               <TouchableOpacity style={styles.button}>
                 <Image style={styles.image} source={require("../people.png")} />
+                
               </TouchableOpacity>
               <TouchableOpacity style={styles.button}>
                 <Image style={styles.image} source={require("../cog.png")} />
+                
               </TouchableOpacity>
               <TouchableOpacity style={styles.burger}>
                 <Text style={styles.burgerText}>☰</Text>
@@ -114,4 +94,4 @@ const RegistrationPage = ({ navigation }) => {
   );
 };
 
-export default RegistrationPage;
+export default StartDayPage;

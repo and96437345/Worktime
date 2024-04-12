@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   button: {
-    marginRight: 25,
+    // marginRight: 25,
   },
   accountButton: {
     marginLeft: "auto",
@@ -37,10 +37,38 @@ export const styles = StyleSheet.create({
     backgroundColor: "blue",
     marginTop: 40,
     marginBottom: 10,
+    borderRadius: 5,
   },
   accountCreateButtonText: {
     color: "white",
     textAlign: "center",
+    marginTop: 15,
+    marginBottom: 15,
+  },
+  listButton: {
+    backgroundColor: "white",
+    borderColor: 'blue',
+    borderWidth: 2,
+    marginBottom: 10,
+    borderRadius: 5,
+  },
+  listButtonText: {
+    color: "blue",
+    textAlign: "center",
+    padding: 10,
+
+  },
+  startButton: {
+    backgroundColor: "blue",
+    marginTop: '45%',
+    padding: 30,
+    borderRadius: 10,
+  },
+  startButtonText: {
+    color: "white",
+    textAlign: "center",
+    fontSize: 24,
+    fontWeight: '600',
     marginTop: 15,
     marginBottom: 15,
   },
